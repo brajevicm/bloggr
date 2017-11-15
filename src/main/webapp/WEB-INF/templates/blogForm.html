@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<head>
+  <title>Bloggr | New Blog</title>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+
+<div id="content" class="container">
+  <div class="row-fluid">
+    <h2><span th:text="#{bloggr.subheading}"></span></h2>
+    <form method="POST" th:object="${blogForm}" th:action="@{/blog/new}">
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <ul>
+          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="title" class="control-label"><span th:text="#{blog.title}"></span></ label>
+        <input class="form-control" type="text" id="title" name="title" th:field="*{title}"/>
+        <small th:class="${#fields.hasErrors('title')}? 'error'"></small>
+      </div>
+      <div class="form-group">
+        <label for="blogger" class="control-label"><span th:text="#{blog.blogger}"></span></label>
+        <input class="form-control" type="text" id="blogger" name="blogger" th:field="*{blogger}"/>
+        <small th:class="${#fields.hasErrors('blogger')}? 'error'"></small>
+      </div>
+      <div class="form-group">
+        <label for="message" class="control-label"><span th:text="#{blog.message}"></span></label>
+        <textarea class="form-control" name="message" id="message" cols="30" rows="10" th:field="*{message}"></textarea>
+        <small th:class="${#fields.hasErrors('message')}? 'error'"></small>
+      </div>
+      <input type="submit" th:value="#{blog.submit}" class="btn btn-primary">
+    </form>
+  </div>
+
+  <div th:replace="layout :: footer"></div>
+</body>
+</html>

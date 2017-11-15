@@ -1,0 +1,11 @@
+body {
+    padding-top: 70px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.navbar-brand {
+    color: #4787FF !important;
+}
