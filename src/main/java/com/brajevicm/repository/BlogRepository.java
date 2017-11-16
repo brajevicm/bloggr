@@ -13,7 +13,15 @@ import java.util.List;
 public interface BlogRepository {
   List<Blog> findBlogs();
 
-  Blog findBlogByName(String title);
+  Blog findByTitle(String title);
 
-  Blog save(Blog blog);
+  Blog findById(Long id);
+
+  Blog create(Blog blog);
+
+  Blog edit(Blog blog);
+
+  void deleteByTitle(String title);
+
+  void deleteById(Long id);
 }

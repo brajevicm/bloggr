@@ -1,6 +1,7 @@
 package com.brajevicm.entity.form;
 
 import com.brajevicm.entity.Blog;
+import com.brajevicm.entity.Blogger;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
@@ -52,7 +53,7 @@ public class BlogForm {
   }
 
   public Blog toBlog() {
-    return new Blog(this.title, this.message, this.blogger);
+    return new Blog(this.title, this.message, new Blogger());
   }
 
   @Override

@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * Github:  https://github.com/brajevicm
  * Date:    15-Nov-17
  */
-@ResponseStatus(value = HttpStatus.CONFLICT, reason = "Blog Already Exists")
-public class DuplicateBlogException extends RuntimeException {
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Blogger Not Found")
+public class BloggerNotFoundException extends RuntimeException {
 }

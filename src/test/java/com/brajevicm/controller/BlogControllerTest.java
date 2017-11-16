@@ -1,11 +1,10 @@
 package com.brajevicm.controller;
 
 import com.brajevicm.entity.Blog;
+import com.brajevicm.entity.Blogger;
 import com.brajevicm.repository.BlogRepository;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
-
-import java.util.Date;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -35,10 +34,10 @@ public class BlogControllerTest {
   @Test
   public void shouldProcessForm() throws Exception {
     BlogRepository mockBlogRepository = mock(BlogRepository.class);
-    Blog unsaved = new Blog("Title", "Message", "Blogger");
-    Blog saved = new Blog(24L, "Title", "Message", "Blogger", null, "title");
+    Blog unsaved = new Blog("Title", "Message");
+    Blog saved = new Blog(24L, "Title", "Message", new Blogger(), null, "title");
 
-    when(mockBlogRepository.save(unsaved)).thenReturn(saved);
+    when(mockBlogRepository.create(unsaved)).thenReturn(saved);
 
     BlogController blogController = new BlogController(mockBlogRepository);
     MockMvc mockMvc = standaloneSetup(blogController).build();

@@ -46,7 +46,7 @@ public class BlogController {
     if (bindingResult.hasErrors()) {
       return "blogForm";
     }
-    blogRepository.save(blogForm.toBlog());
+    blogRepository.create(blogForm.toBlog());
 
     return "redirect:/blogs";
   }
@@ -60,7 +60,7 @@ public class BlogController {
 
   @RequestMapping(value = "/blog/{blogTitle}", method = RequestMethod.GET)
   public String getBlog(@PathVariable String blogTitle, Model model) {
-    Blog blog = blogRepository.findBlogByName(blogTitle);
+    Blog blog = blogRepository.findByTitle(blogTitle);
     if (blog == null) {
       throw new BlogNotFoundException();
     }

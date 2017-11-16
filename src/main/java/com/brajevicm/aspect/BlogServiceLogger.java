@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class BlogServiceLogger {
   final static Logger logger = LoggerFactory.getLogger(BlogServiceLogger.class);
 
-  @Pointcut("execution(* com.brajevicm.repository.BlogRepository.save(..))")
+  @Pointcut("execution(* com.brajevicm.repository.BlogRepository.create(..))")
   public void save() {
   }
 

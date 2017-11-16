@@ -29,7 +29,7 @@ public class Blog {
 
   @NotNull
   @Size(min = 2, max = 20, message = "{blog.blogger.size}")
-  private String blogger;
+  private Blogger blogger;
 
   @NotNull
   @Size(min = 3, max = 25)
@@ -38,11 +38,19 @@ public class Blog {
   public Blog() {
   }
 
-  public Blog(String title, String message, String blogger) {
+  public Blog(String title, String message) {
+    this(null, title, message, new Blogger(), new Date(), title.replace(' ', '-').toLowerCase());
+  }
+
+  public Blog(String title, String message, Blogger blogger) {
     this(null, title, message, blogger, new Date(), title.replace(' ', '-').toLowerCase());
   }
 
-  public Blog(Long id, String title, String message, String blogger, Date createdAt, String link) {
+  public Blog(Long id, String title, String message, Blogger blogger) {
+    this(id, title, message, blogger, new Date(), title.replace(' ', '-').toLowerCase());
+  }
+
+  public Blog(Long id, String title, String message, Blogger blogger, Date createdAt, String link) {
     this.id = id;
     this.title = title;
     this.message = message;
@@ -83,11 +91,11 @@ public class Blog {
     this.createdAt = createdAt;
   }
 
-  public String getBlogger() {
+  public Blogger getBlogger() {
     return blogger;
   }
 
-  public void setBlogger(String blogger) {
+  public void setBlogger(Blogger blogger) {
     this.blogger = blogger;
   }
 
