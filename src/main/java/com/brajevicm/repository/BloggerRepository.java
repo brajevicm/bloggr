@@ -1,6 +1,7 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blogger;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,9 +12,9 @@ import java.util.List;
  * Date:    15-Nov-17
  */
 public interface BloggerRepository {
-  Blogger save(Blogger blogger);
+  Blogger create(Blogger blogger);
 
-  List<Blogger> getUsers();
+  Blogger findByUsername(String username);
 
-
+  Blogger findBloggerByLogin(String username, String passsword);
 }

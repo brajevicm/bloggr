@@ -15,39 +15,26 @@ import java.util.Date;
  */
 public class Blog {
   private Long id;
-
-  @NotNull
-  @Size(min = 3, max = 25, message = "{blog.title.size}")
   private String title;
-
-  @NotNull
-  @Size(min = 10, max = 280, message = "{blog.message.size}")
   private String message;
-
-  @NotNull
-  private Date createdAt;
-
-  @NotNull
-  @Size(min = 2, max = 20, message = "{blog.blogger.size}")
   private Blogger blogger;
-
-  @NotNull
-  @Size(min = 3, max = 25)
+  private Date createdAt;
   private String link;
 
   public Blog() {
   }
 
   public Blog(String title, String message) {
-    this(null, title, message, new Blogger(), new Date(), title.replace(' ', '-').toLowerCase());
+    this.title = title;
+    this.message = message;
   }
 
-  public Blog(String title, String message, Blogger blogger) {
-    this(null, title, message, blogger, new Date(), title.replace(' ', '-').toLowerCase());
-  }
-
-  public Blog(Long id, String title, String message, Blogger blogger) {
-    this(id, title, message, blogger, new Date(), title.replace(' ', '-').toLowerCase());
+  public Blog(Long id, String title, String message, Blogger blogger, Date createdAt) {
+    this.id = id;
+    this.title = title;
+    this.message = message;
+    this.blogger = blogger;
+    this.createdAt = createdAt;
   }
 
   public Blog(Long id, String title, String message, Blogger blogger, Date createdAt, String link) {
@@ -83,20 +70,20 @@ public class Blog {
     this.message = message;
   }
 
-  public Date getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(Date createdAt) {
-    this.createdAt = createdAt;
-  }
-
   public Blogger getBlogger() {
     return blogger;
   }
 
   public void setBlogger(Blogger blogger) {
     this.blogger = blogger;
+  }
+
+  public Date getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
   }
 
   public String getLink() {
@@ -119,8 +106,8 @@ public class Blog {
       .append(id, blog.id)
       .append(title, blog.title)
       .append(message, blog.message)
-      .append(createdAt, blog.createdAt)
       .append(blogger, blog.blogger)
+      .append(createdAt, blog.createdAt)
       .append(link, blog.link)
       .isEquals();
   }
@@ -131,8 +118,8 @@ public class Blog {
       .append(id)
       .append(title)
       .append(message)
-      .append(createdAt)
       .append(blogger)
+      .append(createdAt)
       .append(link)
       .toHashCode();
   }
@@ -143,8 +130,8 @@ public class Blog {
       "id=" + id +
       ", title='" + title + '\'' +
       ", message='" + message + '\'' +
+      ", blogger=" + blogger +
       ", createdAt=" + createdAt +
-      ", blogger='" + blogger + '\'' +
       ", link='" + link + '\'' +
       '}';
   }

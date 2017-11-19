@@ -20,31 +20,31 @@ import java.util.Arrays;
 public class BlogServiceLogger {
   final static Logger logger = LoggerFactory.getLogger(BlogServiceLogger.class);
 
-  @Pointcut("execution(* com.brajevicm.repository.BlogRepository.create(..))")
-  public void save() {
+  @Pointcut("execution(* com.brajevicm.service.BlogService.create(..))")
+  public void create() {
   }
 
-  @Before("save()")
+  @Before("create()")
   public void beforeSave() {
-    logger.info("Saving blog...");
+    logger.info("Creating blog...");
   }
 
-  @After("save()")
+  @After("create()")
   public void afterSave(JoinPoint joinPoint) {
     logger.info("Success on: " + joinPoint.getSignature().getName());
   }
 
-  @AfterThrowing(value = "save()", throwing = "error")
+  @AfterThrowing(value = "create()", throwing = "error")
   public void afterSave(JoinPoint joinPoint, Throwable error) {
     logger.info("Failure on: " + joinPoint.getSignature().getName());
     logger.error(error.toString());
   }
 
-  @Around("save()")
+  @Around("create()")
   public void aroundSave(ProceedingJoinPoint joinPoint) throws Throwable {
-    logger.info("Saving blog started...");
+    logger.info("Creating blog started...");
     joinPoint.proceed();
-    logger.info("Saving blog finished...");
+    logger.info("Creating blog finished...");
   }
 
 }

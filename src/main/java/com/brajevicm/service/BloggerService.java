@@ -1,7 +1,9 @@
 package com.brajevicm.service;
 
 import com.brajevicm.entity.Blogger;
+import com.brajevicm.entity.form.BloggerForm;
 import com.brajevicm.repository.BloggerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,14 +13,8 @@ import java.util.List;
  * Github:  https://github.com/brajevicm
  * Date:    15-Nov-17
  */
-public class BloggerService implements BloggerRepository {
-  @Override
-  public Blogger save(Blogger blogger) {
-    return null;
-  }
+public interface BloggerService {
+  Blogger registerNewBloggerAccount(BloggerForm bloggerForm);
 
-  @Override
-  public List<Blogger> getUsers() {
-    return null;
-  }
+  Blogger validateBlogger(BloggerForm bloggerForm);
 }

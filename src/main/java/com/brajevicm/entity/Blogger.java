@@ -15,7 +15,7 @@ import java.util.Set;
 public class Blogger {
   private Long id;
   private String username;
-  private String passwordHash;
+  private String password;
   private String firstName;
   private String lastName;
   private String createdAt;
@@ -24,17 +24,17 @@ public class Blogger {
   public Blogger() {
   }
 
-  public Blogger(String username, String passwordHash, String firstName, String lastName) {
+  public Blogger(String username, String password, String firstName, String lastName) {
     this.username = username;
-    this.passwordHash = passwordHash;
+    this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  public Blogger(Long id, String username, String passwordHash, String firstName, String lastName, String createdAt, Set<Blog> blogs) {
+  public Blogger(Long id, String username, String password, String firstName, String lastName, String createdAt, Set<Blog> blogs) {
     this.id = id;
     this.username = username;
-    this.passwordHash = passwordHash;
+    this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
     this.createdAt = createdAt;
@@ -57,12 +57,12 @@ public class Blogger {
     this.username = username;
   }
 
-  public String getPasswordHash() {
-    return passwordHash;
+  public String getPassword() {
+    return password;
   }
 
-  public void setPasswordHash(String passwordHash) {
-    this.passwordHash = passwordHash;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
   public String getFirstName() {
@@ -108,7 +108,7 @@ public class Blogger {
     return new EqualsBuilder()
       .append(id, blogger.id)
       .append(username, blogger.username)
-      .append(passwordHash, blogger.passwordHash)
+      .append(password, blogger.password)
       .append(firstName, blogger.firstName)
       .append(lastName, blogger.lastName)
       .append(createdAt, blogger.createdAt)
@@ -121,7 +121,7 @@ public class Blogger {
     return new HashCodeBuilder(17, 37)
       .append(id)
       .append(username)
-      .append(passwordHash)
+      .append(password)
       .append(firstName)
       .append(lastName)
       .append(createdAt)
@@ -134,7 +134,7 @@ public class Blogger {
     return "Blogger{" +
       "id=" + id +
       ", username='" + username + '\'' +
-      ", passwordHash='" + passwordHash + '\'' +
+      ", password='" + password + '\'' +
       ", firstName='" + firstName + '\'' +
       ", lastName='" + lastName + '\'' +
       ", createdAt='" + createdAt + '\'' +

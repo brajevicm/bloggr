@@ -1,8 +1,7 @@
 package com.brajevicm.entity.form;
 
-import com.brajevicm.entity.Blog;
-import com.brajevicm.entity.Blogger;
-import org.hibernate.validator.constraints.NotEmpty;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,10 +23,6 @@ public class BlogForm {
   @Size(min = 10, max = 280, message = "{blog.message.size}")
   private String message;
 
-  @NotNull
-  @Size(min = 2, max = 20, message = "{blog.blogger.size}")
-  private String blogger;
-
   public String getTitle() {
     return title;
   }
@@ -44,16 +39,26 @@ public class BlogForm {
     this.message = message;
   }
 
-  public String getBlogger() {
-    return blogger;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+
+    if (o == null || getClass() != o.getClass()) return false;
+
+    BlogForm blogForm = (BlogForm) o;
+
+    return new EqualsBuilder()
+      .append(title, blogForm.title)
+      .append(message, blogForm.message)
+      .isEquals();
   }
 
-  public void setBlogger(String blogger) {
-    this.blogger = blogger;
-  }
-
-  public Blog toBlog() {
-    return new Blog(this.title, this.message, new Blogger());
+  @Override
+  public int hashCode() {
+    return new HashCodeBuilder(17, 37)
+      .append(title)
+      .append(message)
+      .toHashCode();
   }
 
   @Override
@@ -61,7 +66,6 @@ public class BlogForm {
     return "BlogForm{" +
       "title='" + title + '\'' +
       ", message='" + message + '\'' +
-      ", blogger='" + blogger + '\'' +
       '}';
   }
 }

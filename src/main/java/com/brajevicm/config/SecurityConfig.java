@@ -1,11 +1,13 @@
 package com.brajevicm.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+import javax.sql.DataSource;
 
 /**
  * Author:  Milos Brajevic
@@ -16,33 +18,39 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+  @Autowired
+  private DataSource dataSource;
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
+//    @formatter:off
     http
-      .formLogin()
-      .and()
+      .formLogin().loginPage("/login").failureUrl("/login?error")
+        .usernameParameter("username").passwordParameter("password")
+    .and()
       .rememberMe().key("bloggrKey")
-      .and()
-      .logout()
-      .and()
+    .and()
+      .logout().logoutSuccessUrl("/login?logout")
+    .and()
       .httpBasic().realmName("Bloggr")
-      .and()
-      .authorizeRequests()
-      .antMatchers("blogger/me").authenticated()
-      .antMatchers(HttpMethod.POST, "blog/new").authenticated()
+    .and()
+      .csrf()
+    .and()
+    .authorizeRequests()
+      .antMatchers("/blogger/me").authenticated()
+      .antMatchers("/blog/new").authenticated()
       .anyRequest().permitAll()
       .and()
       .requiresChannel().antMatchers("blog/new").requiresSecure()
-      .regexMatchers("/").requiresInsecure();
-
+      .antMatchers("/").requiresInsecure();
+    //    @formatter:on
   }
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication()
-      .withUser("user").password("user").roles("USER")
-      .and()
-      .withUser("admin").password("admin").roles("ADMIN");
+    auth
+      .jdbcAuthentication().dataSource(dataSource)
+      .usersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?")
+      .authoritiesByUsernameQuery("SELECT username, role FROM user_roles WHERE username = ?");
   }
 }

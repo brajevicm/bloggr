@@ -3,7 +3,8 @@ package com.brajevicm.controller;
 import com.brajevicm.entity.Blog;
 import com.brajevicm.entity.form.BlogForm;
 import com.brajevicm.exception.BlogNotFoundException;
-import com.brajevicm.repository.BlogRepository;
+import com.brajevicm.service.BlogService;
+import com.brajevicm.service.BlogServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,14 +25,15 @@ import javax.validation.Valid;
  */
 @Controller
 public class BlogController {
-  private BlogRepository blogRepository;
+  @Autowired
+  private BlogService blogService;
 
   public BlogController() {
   }
 
   @Autowired
-  public BlogController(BlogRepository blogRepository) {
-    this.blogRepository = blogRepository;
+  public BlogController(BlogService blogService) {
+    this.blogService = blogService;
   }
 
   @RequestMapping(value = "/blog/new", method = RequestMethod.GET)
@@ -46,21 +48,21 @@ public class BlogController {
     if (bindingResult.hasErrors()) {
       return "blogForm";
     }
-    blogRepository.create(blogForm.toBlog());
+    blogService.create(blogForm);
 
     return "redirect:/blogs";
   }
 
   @RequestMapping(value = "/blogs", method = RequestMethod.GET)
   public String getBlogs(Model model) {
-    model.addAttribute(blogRepository.findBlogs());
+    model.addAttribute(blogService.findBlogs());
 
     return "blogs";
   }
 
   @RequestMapping(value = "/blog/{blogTitle}", method = RequestMethod.GET)
   public String getBlog(@PathVariable String blogTitle, Model model) {
-    Blog blog = blogRepository.findByTitle(blogTitle);
+    Blog blog = blogService.findByTitle(blogTitle);
     if (blog == null) {
       throw new BlogNotFoundException();
     }

@@ -1,6 +1,7 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blog;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

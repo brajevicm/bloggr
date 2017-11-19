@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<head>
+  <title>Login</title>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+
+<div id="content" class="container">
+  <div class="row">
+    <h2><span th:text="#{bloggr.login}"></span></h2>
+    <form method="POST" th:object="${bloggerForm}" th:action="@{/login}">
+      <div class="alert alert-danger" th:if="${param.error}">
+        <ul>
+          <li th:text="#{message.loginError}"></li>
+        </ul>
+      </div>
+      <div class="alert alert-success" th:if="${param.logout}">
+        <ul>
+          <li th:text="#{message.logoutSuccess}"></li>
+        </ul>
+      </div>
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <ul>
+          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="username" class="control-label"><span th:text="#{blogger.username}"></span></label>
+        <input class="form-control" type="text" id="username" name="username" th:field="*{username}"/>
+        <small th:class="${#fields.hasErrors('username')}? 'error'"></small>
+      </div>
+      <div class="form-group">
+        <label for="password" class="control-label"><span th:text="#{blogger.password}"></span></label>
+        <input type="password" class="form-control" name="password" id="password" th:field="*{password}">
+        <small th:class="${#fields.hasErrors('password')}? 'error'"></small>
+      </div>
+      <input type="submit" th:value="#{bloggr.login}" class="btn btn-primary">
+    </form>
+  </div>
+</div>
+
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

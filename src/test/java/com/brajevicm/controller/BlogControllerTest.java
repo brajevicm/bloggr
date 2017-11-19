@@ -2,9 +2,13 @@ package com.brajevicm.controller;
 
 import com.brajevicm.entity.Blog;
 import com.brajevicm.entity.Blogger;
+import com.brajevicm.entity.form.BlogForm;
 import com.brajevicm.repository.BlogRepository;
+import com.brajevicm.service.BlogService;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.Date;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -33,19 +37,22 @@ public class BlogControllerTest {
 
   @Test
   public void shouldProcessForm() throws Exception {
-    BlogRepository mockBlogRepository = mock(BlogRepository.class);
-    Blog unsaved = new Blog("Title", "Message");
-    Blog saved = new Blog(24L, "Title", "Message", new Blogger(), null, "title");
+    BlogService mockBlogService = mock(BlogService.class);
 
-    when(mockBlogRepository.create(unsaved)).thenReturn(saved);
+    BlogForm blogForm = new BlogForm();
+    blogForm.setMessage("Message");
+    blogForm.setTitle("Title");
 
-    BlogController blogController = new BlogController(mockBlogRepository);
+    Blog blog = new Blog(24L, "Title", "Message", new Blogger(), new Date(), "title");
+
+    when(mockBlogService.create(blogForm)).thenReturn(blog);
+
+    BlogController blogController = new BlogController(mockBlogService);
     MockMvc mockMvc = standaloneSetup(blogController).build();
 
     mockMvc.perform(post("/blog/new")
       .param("title", "Title")
-      .param("message", "Message")
-      .param("blogger", "Blogger"))
+      .param("message", "Message"))
       .andExpect(redirectedUrl("/blogs"));
 
   }
