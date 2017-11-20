@@ -2,6 +2,7 @@ package com.brajevicm.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.persistence.criteria.Root;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 

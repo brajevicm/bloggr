@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bloggr@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bloggr">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="phpmyadmin"/>
+    <schema id="7" parent="1" name="test"/>
+    <table id="8" parent="2" name="user_roles"/>
+    <table id="9" parent="2" name="users"/>
+    <column id="10" parent="8" name="user_role_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="11" parent="8" name="username">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="12" parent="8" name="role">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="13" parent="8" name="fk_username_idx">
+      <ColNames>username</ColNames>
+    </index>
+    <index id="14" parent="8" name="uni_username_role">
+      <ColNames>role
+username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="16" parent="8" name="uni_username_role">
+      <ColNames>role
+username</ColNames>
+      <UnderlyingIndexName>uni_username_role</UnderlyingIndexName>
+    </key>
+    <foreign-key id="17" parent="8" name="fk_username">
+      <ColNames>username</ColNames>
+      <RefSchemaName>bloggr</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <column id="18" parent="9" name="username">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="9" name="password">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="9" name="enabled">
+      <Position>3</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="21" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

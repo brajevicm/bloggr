@@ -40,6 +40,7 @@ public class LoginController {
   public String processLoginForm(@Valid @ModelAttribute BloggerForm bloggerForm, BindingResult bindingResult,
                                  @RequestParam(value = "error", required = false) String error,
                                  @RequestParam(value = "logout", required = false) String logout,
+                                 @RequestParam(value = "register", required = false) String register,
                                  Model model) {
     if (bindingResult.hasErrors()) {
       return "loginForm";
@@ -55,6 +56,11 @@ public class LoginController {
       return "loginForm";
     }
 
+    if (register != null) {
+      model.addAttribute("register", "message.registerSuccess");
+      return "loginForm";
+    }
+
     return "redirect:/";
   }
 
@@ -64,6 +70,7 @@ public class LoginController {
     if (auth != null) {
       new SecurityContextLogoutHandler().logout(request, response, auth);
     }
+
     return "redirect:/login?logout";
   }
 

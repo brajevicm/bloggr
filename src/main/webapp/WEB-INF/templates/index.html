@@ -4,7 +4,7 @@
 <head th:replace="layout :: head">
 </head>
 <head>
-  <title>Bloggr | Home</title>
+  <title th:text="'Bloggr | ' +  #{bloggr.home}">></title>
 </head>
 <body>
 <div th:replace="layout :: header"></div>

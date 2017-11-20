@@ -13,5 +13,3 @@ Aim is to have the following functionalities:
   <li>Logout</li>
   <li>RESTful API</li>
 </ul>
-
-Once implemented each functionality will have more detailed description.

@@ -3,6 +3,7 @@ package com.brajevicm.controller;
 import com.brajevicm.entity.form.BloggerForm;
 import com.brajevicm.service.BloggerService;
 import com.brajevicm.service.BloggerServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,7 +21,8 @@ import javax.validation.Valid;
  */
 @Controller
 public class RegisterController {
-  private BloggerService bloggerService = new BloggerServiceImpl();
+  @Autowired
+  private BloggerService bloggerService;
 
   @RequestMapping(value = "/register", method = RequestMethod.GET)
   public String showRegistrationForm(Model model) {
@@ -36,6 +38,6 @@ public class RegisterController {
       return "registerForm";
     }
 
-    return "redirect:/login";
+    return "redirect:/login?register";
   }
 }

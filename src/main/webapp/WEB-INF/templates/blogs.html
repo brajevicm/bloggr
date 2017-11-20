@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <head>
-  <title>Bloggr | Blogs</title>
+  <title th:text="'Bloggr | ' +  #{bloggr.blogs}">></title>
 </head>
 <body>
 <div th:replace="layout :: header"></div>

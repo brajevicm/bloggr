@@ -13,9 +13,10 @@ import org.springframework.stereotype.Service;
  * Github:  https://github.com/brajevicm
  * Date:    18-Nov-17
  */
-@Service
+@Service("bloggerService")
 public class BloggerServiceImpl implements BloggerService {
-  private BloggerRepository bloggerRepository = new BloggerRepositoryImpl();
+  @Autowired
+  private BloggerRepository bloggerRepository;
 
   @Override
   public Blogger registerNewBloggerAccount(BloggerForm bloggerForm) {

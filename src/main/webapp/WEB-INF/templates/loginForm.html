@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <head>
-  <title>Login</title>
+  <title th:text="'Bloggr | ' +  #{bloggr.login}">></title>
 </head>
 <body>
 <div th:replace="layout :: header"></div>
@@ -20,6 +20,11 @@
       <div class="alert alert-success" th:if="${param.logout}">
         <ul>
           <li th:text="#{message.logoutSuccess}"></li>
+        </ul>
+      </div>
+      <div class="alert alert-success" th:if="${param.register}">
+        <ul>
+          <li th:text="#{message.registerSuccess}"></li>
         </ul>
       </div>
       <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">

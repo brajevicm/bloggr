@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <head>
-  <title>Bloggr | New Blog</title>
+  <title th:text="'Bloggr | ' +  #{bloggr.newBlog}">></title>
 </head>
 <body>
 <div th:replace="layout :: header"></div>

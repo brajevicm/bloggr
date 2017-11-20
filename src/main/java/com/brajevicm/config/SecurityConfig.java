@@ -41,8 +41,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers("/blog/new").authenticated()
       .anyRequest().permitAll()
       .and()
-      .requiresChannel().antMatchers("blog/new").requiresSecure()
-      .antMatchers("/").requiresInsecure();
+        .requiresChannel().antMatchers("blog/new").requiresSecure()
+      .and()
+        .requiresChannel().antMatchers("register").requiresSecure()
+        .antMatchers("/").requiresInsecure();
     //    @formatter:on
   }
 

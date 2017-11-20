@@ -1,8 +1,10 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blogger;
+import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,32 +17,32 @@ import java.util.Objects;
  */
 @Repository("bloggerRepository")
 public class BloggerRepositoryImpl implements BloggerRepository {
-  List<Blogger> bloggers = new ArrayList<Blogger>() {{
-    new Blogger("milos", "milos123", "Milos", "Brajevic");
-  }};
+  private JdbcOperations jdbc;
+
+  @Inject
+  public BloggerRepositoryImpl(JdbcOperations jdbc) {
+    this.jdbc = jdbc;
+  }
 
   @Override
   public Blogger create(Blogger blogger) {
-    blogger.setId(this.bloggers.stream().mapToLong(
-      b -> b.getId()).max().getAsLong() + 1);
-    this.bloggers.add(blogger);
+    jdbc.update(
+      "INSERT INTO users (username, password)" +
+        " VALUES (?, ?)",
+      blogger.getUsername(),
+      blogger.getPassword()
+    );
 
     return blogger;
   }
 
   @Override
   public Blogger findByUsername(String username) {
-    return bloggers.stream()
-      .filter(b -> Objects.equals(b.getUsername(), username))
-      .findFirst()
-      .orElse(null);
+    return null;
   }
 
   @Override
   public Blogger findBloggerByLogin(String username, String passsword) {
-    return this.bloggers.stream().filter(
-      b -> Objects.equals(b.getUsername(), username) && Objects.equals(b.getPassword(), passsword))
-      .findFirst()
-      .orElse(null);
+    return null;
   }
 }
