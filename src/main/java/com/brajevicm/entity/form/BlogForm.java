@@ -5,6 +5,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 
 /**
@@ -13,7 +14,7 @@ import javax.validation.constraints.Size;
  * Github:  https://github.com/brajevicm
  * Date:    14-Nov-17
  */
-public class BlogForm {
+public class BlogForm implements Serializable {
 
   @NotNull
   @Size(min = 3, max = 25, message = "{blog.title.size}")

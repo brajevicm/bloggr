@@ -23,7 +23,7 @@ import java.util.Arrays;
  * Github:  https://github.com/brajevicm
  * Date:    19-Nov-17
  */
-@Configuration
+//@Configuration
 public class WebFlowConfig extends AbstractFlowConfiguration {
 
   @Bean

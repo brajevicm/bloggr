@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="
+      http://www.springframework.org/schema/webflow
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <var name="bloggerForm" class="com.brajevicm.entity.form.BloggerForm"/>
+
+    <view-state id="registerUsername" model="bloggerForm" view="flows/register/registerUsername">
+        <binder>
+            <binding property="username"/>
+            <binding property="password"/>
+        </binder>
+        <transition on="continue" to="registerFirstAndLastName"/>
+        <transition on="cancel" to="endState"/>
+    </view-state>
+
+    <view-state id="registerFirstAndLastName" model="bloggerForm" view="flows/register/registerFirstAndLastName">
+        <binder>
+            <binding property="firstName"/>
+            <binding property="lastName"/>
+        </binder>
+        <transition on="continue" to="registerBlogger"/>
+        <transition on="cancel" to="endState"/>
+    </view-state>
+
+    <action-state id="registerBlogger">
+        <evaluate expression="bloggerService.registerNewBloggerAccount(flowScope.bloggerForm)"/>
+        <transition to="registerFinished"/>
+    </action-state>
+
+    <view-state id="registerFinished" view="flows/register/registerFinished"/>
+
+    <!-- End state -->
+    <end-state id="endState"/>
+
+    <global-transitions>
+        <transition on="cancel" to="endState"/>
+    </global-transitions>
+</flow>

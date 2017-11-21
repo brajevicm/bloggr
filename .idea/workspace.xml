@@ -7,31 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1019924-b6e0-4f43-91e7-ac768b7945ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/flow/RegisterFlowHandler.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/BloggerPrincipal.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BloggrUserDetailsService.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/bloggr_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/bloggr_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/milos.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/milos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/register-flow.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFinished.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFirstAndLastName.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerUsername.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bloggr.iml" afterPath="$PROJECT_DIR$/bloggr.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/DataSourceConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/DataSourceConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.sql" afterPath="$PROJECT_DIR$/schema.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebAppInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebAppInitializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/RegisterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BloggerRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BloggerRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BloggerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BloggerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogForm.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogs.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/loginForm.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/loginForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/registerForm.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/registerForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blogger.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blogger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BlogForm.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BlogForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BloggerForm.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BloggerForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/webapp/resources/messages_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/messages_rs.properties" afterPath="$PROJECT_DIR$/src/main/webapp/resources/messages_rs.properties" />
     </list>
@@ -77,25 +63,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WebFlowConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java">
+      <file leaf-file-name="registerFinished.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFinished.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+            <state relative-caret-position="520">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,10 +85,10 @@
         <option value="Jsp File" />
         <option value="JSP" />
         <option value="Tag Library Descriptor" />
-        <option value="HTML File" />
         <option value="Aspect" />
-        <option value="HTML Thymeleaf" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="HTML Thymeleaf" />
       </list>
     </option>
   </component>
@@ -139,19 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/aspect/Logger.aj" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/aspect/LoggerAspect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/aspect/BlogLoggerAspect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/BlogServiceLoggerConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/exception/UserNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BlogForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BloggerForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blogger.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blog.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebSecurityInitializer.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/brajevicm/controller/BlogControllerTest.java" />
@@ -160,7 +121,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BloggerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BlogRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BloggerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blog.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BlogRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BlogServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/BloggerPrincipal.java" />
@@ -171,25 +131,39 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layout.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/flow/RegisterFlowHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebAppInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogForm.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogs.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/registerForm.html" />
-        <option value="$PROJECT_DIR$/schema.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BloggerRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/DataSourceConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BloggerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BloggrUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/messages_en.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/messages_rs.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/loginForm.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BlogForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blog.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/messages_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/messages_rs.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/registerFinished.html" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.12.RELEASE/spring-web-4.3.12.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/registerEmail.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/registerFirstAndLastName.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blogger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BloggerForm.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/registerUsername.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register-flow.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/flow/RegisterFlowHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java" />
+        <option value="$PROJECT_DIR$/schema.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerUsername.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFirstAndLastName.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/register-flow.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFinished.html" />
       </list>
     </option>
   </component>
@@ -277,33 +251,7 @@
               <item name="bloggr" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="brajevicm" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bloggr" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bloggr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="brajevicm" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bloggr" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bloggr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bloggr" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bloggr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bloggr" type="b2602c69:ProjectViewProjectNode" />
@@ -321,6 +269,27 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bloggr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bloggr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="flows" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bloggr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bloggr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="flows" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -344,12 +313,8 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr" />
-      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\resources" />
-      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\java\com\brajevicm" />
-      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\java" />
-      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\java\com\brajevicm\config" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="spittr.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\webapp\resources\images" />
@@ -363,8 +328,12 @@
       <recent name="spittr.controller" />
       <recent name="spittr.model" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="spittr.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\webapp\WEB-INF\templates\flows\register" />
+      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr" />
+      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\resources" />
+      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\java\com\brajevicm" />
+      <recent name="C:\Users\milos\IdeaProjects\it355\bloggr\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -771,7 +740,7 @@
       <workItem from="1511046612573" duration="12119000" />
       <workItem from="1511118444821" duration="7048000" />
       <workItem from="1511139026164" duration="827000" />
-      <workItem from="1511210172063" duration="7348000" />
+      <workItem from="1511210172063" duration="15806000" />
     </task>
     <servers />
   </component>
@@ -808,7 +777,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142249000" />
+    <option name="totallyTimeSpent" value="150707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -821,6 +790,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1696" height="1036" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.50265753" order="9" side_tool="true" content_ui="tabs" />
@@ -845,7 +815,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931036" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32714617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2383863" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2383863" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -913,31 +883,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/exception/BlogNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/exception/BloggerNotFoundException.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/service/Blogger.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BlogForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/messages-rs.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/messages.properties" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/brajevicm/controller/BlogControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -963,13 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1043,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/flow/RegisterFlowHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebAppInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1075,39 +1006,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BloggerForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/registerForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/service/BlogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1144,14 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blogForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1184,34 +1078,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/messages_rs.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/loginForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1221,26 +1091,6 @@
         <state relative-caret-position="131">
           <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/DataSourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1278,12 +1128,226 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+        <state relative-caret-position="230">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/messages_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/messages_rs.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.12.RELEASE/spring-web-4.3.12.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/Blogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1164">
+          <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
+          <folding>
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1236#1237#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="e#1512#1513#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1714#1715#0" expanded="true" />
+            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1846#1847#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
+            <element signature="e#1948#1949#0" expanded="true" />
+            <element signature="e#1974#1975#0" expanded="true" />
+            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BloggerForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+          <folding>
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
+            <element signature="e#1246#1247#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1351#1352#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="e#1403#1404#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/registerForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="3" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="45" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/entity/form/BlogForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/flow/RegisterFlowHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/WebFlowConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-766">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
+            <element signature="e#2720#2721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/config/DataSourceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="51" column="46" lean-forward="false" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerUsername.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="42" selection-end-column="114" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFirstAndLastName.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="40" column="51" lean-forward="false" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerEmail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="24" column="99" lean-forward="true" selection-start-line="24" selection-start-column="99" selection-end-line="24" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/register-flow.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/flows/register/registerFinished.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

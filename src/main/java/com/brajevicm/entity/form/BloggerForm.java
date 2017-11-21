@@ -2,9 +2,11 @@ package com.brajevicm.entity.form;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * Author:  Milos Brajevic
@@ -12,7 +14,7 @@ import javax.validation.constraints.Size;
  * Github:  https://github.com/brajevicm
  * Date:    15-Nov-17
  */
-public class BloggerForm {
+public class BloggerForm implements Serializable {
 
   @NotNull
   @Size(min = 2, max = 20)
@@ -26,6 +28,10 @@ public class BloggerForm {
 
   @Size(min = 8, max = 30)
   private String password;
+
+  @Size(min = 8, max = 30)
+  @Email
+  private String email;
 
   public String getFirstName() {
     return firstName;
@@ -59,6 +65,14 @@ public class BloggerForm {
     this.password = password;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -72,6 +86,7 @@ public class BloggerForm {
       .append(lastName, that.lastName)
       .append(username, that.username)
       .append(password, that.password)
+      .append(email, that.email)
       .isEquals();
   }
 
@@ -82,6 +97,7 @@ public class BloggerForm {
       .append(lastName)
       .append(username)
       .append(password)
+      .append(email)
       .toHashCode();
   }
 
@@ -92,6 +108,7 @@ public class BloggerForm {
       ", lastName='" + lastName + '\'' +
       ", username='" + username + '\'' +
       ", password='" + password + '\'' +
+      ", email='" + email + '\'' +
       '}';
   }
 }

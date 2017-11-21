@@ -18,27 +18,28 @@ public class Blogger {
   private String password;
   private String firstName;
   private String lastName;
+  private String email;
   private String createdAt;
-  private Set<Blog> blogs = new HashSet<>();
 
   public Blogger() {
   }
 
-  public Blogger(String username, String password, String firstName, String lastName) {
+  public Blogger(String username, String password, String firstName, String lastName, String email) {
     this.username = username;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.email = email;
   }
 
-  public Blogger(Long id, String username, String password, String firstName, String lastName, String createdAt, Set<Blog> blogs) {
+  public Blogger(Long id, String username, String password, String firstName, String lastName, String email, String createdAt) {
     this.id = id;
     this.username = username;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.email = email;
     this.createdAt = createdAt;
-    this.blogs = blogs;
   }
 
   public Long getId() {
@@ -81,20 +82,20 @@ public class Blogger {
     this.lastName = lastName;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   public String getCreatedAt() {
     return createdAt;
   }
 
   public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
-  }
-
-  public Set<Blog> getBlogs() {
-    return blogs;
-  }
-
-  public void setBlogs(Set<Blog> blogs) {
-    this.blogs = blogs;
   }
 
   @Override
@@ -111,8 +112,8 @@ public class Blogger {
       .append(password, blogger.password)
       .append(firstName, blogger.firstName)
       .append(lastName, blogger.lastName)
+      .append(email, blogger.email)
       .append(createdAt, blogger.createdAt)
-      .append(blogs, blogger.blogs)
       .isEquals();
   }
 
@@ -124,8 +125,8 @@ public class Blogger {
       .append(password)
       .append(firstName)
       .append(lastName)
+      .append(email)
       .append(createdAt)
-      .append(blogs)
       .toHashCode();
   }
 
@@ -137,8 +138,8 @@ public class Blogger {
       ", password='" + password + '\'' +
       ", firstName='" + firstName + '\'' +
       ", lastName='" + lastName + '\'' +
+      ", email='" + email + '\'' +
       ", createdAt='" + createdAt + '\'' +
-      ", blogs=" + blogs +
       '}';
   }
 }
