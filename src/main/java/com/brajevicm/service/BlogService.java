@@ -26,10 +26,4 @@ public interface BlogService {
   Blog findById(Long id);
 
   Blog create(BlogForm blogForm);
-
-  Blog edit(Blog blog);
-
-  void deleteByTitle(String title);
-
-  void deleteById(Long id);
 }

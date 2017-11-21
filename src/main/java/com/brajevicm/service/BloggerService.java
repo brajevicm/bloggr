@@ -14,7 +14,7 @@ import java.util.List;
  * Date:    15-Nov-17
  */
 public interface BloggerService {
-  Blogger registerNewBloggerAccount(BloggerForm bloggerForm);
+  void registerNewBloggerAccount(BloggerForm bloggerForm);
 
-  Blogger validateBlogger(BloggerForm bloggerForm);
+  Blogger findByUsername(Blogger blogger);
 }

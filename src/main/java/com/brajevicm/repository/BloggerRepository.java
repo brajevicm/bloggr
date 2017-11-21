@@ -15,6 +15,4 @@ public interface BloggerRepository {
   Blogger create(Blogger blogger);
 
   Blogger findByUsername(String username);
-
-  Blogger findBloggerByLogin(String username, String passsword);
 }

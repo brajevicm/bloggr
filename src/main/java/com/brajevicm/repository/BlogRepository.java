@@ -19,10 +19,4 @@ public interface BlogRepository {
   Blog findById(Long id);
 
   Blog create(Blog blog);
-
-  Blog edit(Blog blog);
-
-  void deleteByTitle(String title);
-
-  void deleteById(Long id);
 }

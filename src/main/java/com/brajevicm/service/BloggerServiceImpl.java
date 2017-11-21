@@ -19,18 +19,19 @@ public class BloggerServiceImpl implements BloggerService {
   private BloggerRepository bloggerRepository;
 
   @Override
-  public Blogger registerNewBloggerAccount(BloggerForm bloggerForm) {
+  public void registerNewBloggerAccount(BloggerForm bloggerForm) {
     Blogger blogger = new Blogger();
     blogger.setFirstName(bloggerForm.getFirstName());
     blogger.setLastName(bloggerForm.getLastName());
     blogger.setUsername(bloggerForm.getUsername());
     blogger.setPassword(bloggerForm.getPassword());
 
-    return bloggerRepository.create(blogger);
+    bloggerRepository.create(blogger);
   }
 
   @Override
-  public Blogger validateBlogger(BloggerForm bloggerForm) {
-    return bloggerRepository.findBloggerByLogin(bloggerForm.getUsername(), bloggerForm.getPassword());
+  public Blogger findByUsername(Blogger blogger) {
+    return bloggerRepository.findByUsername(blogger.getUsername());
   }
+
 }

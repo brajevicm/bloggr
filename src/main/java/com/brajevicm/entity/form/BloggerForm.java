@@ -29,10 +29,6 @@ public class BloggerForm implements Serializable {
   @Size(min = 8, max = 30)
   private String password;
 
-  @Size(min = 8, max = 30)
-  @Email
-  private String email;
-
   public String getFirstName() {
     return firstName;
   }
@@ -65,14 +61,6 @@ public class BloggerForm implements Serializable {
     this.password = password;
   }
 
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -86,7 +74,6 @@ public class BloggerForm implements Serializable {
       .append(lastName, that.lastName)
       .append(username, that.username)
       .append(password, that.password)
-      .append(email, that.email)
       .isEquals();
   }
 
@@ -97,7 +84,6 @@ public class BloggerForm implements Serializable {
       .append(lastName)
       .append(username)
       .append(password)
-      .append(email)
       .toHashCode();
   }
 
@@ -108,7 +94,6 @@ public class BloggerForm implements Serializable {
       ", lastName='" + lastName + '\'' +
       ", username='" + username + '\'' +
       ", password='" + password + '\'' +
-      ", email='" + email + '\'' +
       '}';
   }
 }

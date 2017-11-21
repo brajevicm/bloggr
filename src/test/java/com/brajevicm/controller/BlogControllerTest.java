@@ -43,7 +43,7 @@ public class BlogControllerTest {
     blogForm.setMessage("Message");
     blogForm.setTitle("Title");
 
-    Blog blog = new Blog(24L, "Title", "Message", new Blogger(), new Date(), "title");
+    Blog blog = new Blog(24L, "Title", "Message", "milos", new Date(), "title");
 
     when(mockBlogService.create(blogForm)).thenReturn(blog);
 

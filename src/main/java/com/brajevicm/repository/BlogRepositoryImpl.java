@@ -1,13 +1,13 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blog;
-import com.brajevicm.entity.Blogger;
+import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Date;
+import javax.inject.Inject;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Author:  Milos Brajevic
@@ -17,68 +17,57 @@ import java.util.Objects;
  */
 @Repository("blogRepository")
 public class BlogRepositoryImpl implements BlogRepository {
-  List<Blog> blogs = new ArrayList<Blog>() {{
-    new Blog(1L, "Title", "This is the message.", new Blogger(), new Date());
-  }};
+  private JdbcOperations jdbc;
+
+  @Inject
+  public BlogRepositoryImpl(JdbcOperations jdbc) {
+    this.jdbc = jdbc;
+  }
 
   @Override
   public List<Blog> findBlogs() {
-    return this.blogs;
+    String query = "SELECT blog_id, title, message, blogger, createdAt, link FROM blogs";
+
+    return jdbc.query(query, this::mapBlog);
   }
 
   @Override
   public Blog findByTitle(String title) {
-    return this.blogs.stream()
-      .filter(b -> Objects.equals(b.getLink(), title))
-      .findFirst()
-      .orElse(null);
+    String query = "SELECT blog_id, title, message, blogger, createdAt, link FROM blogs WHERE link = ?";
+
+    return jdbc.queryForObject(query, this::mapBlog, title);
   }
 
   @Override
   public Blog findById(Long id) {
-    return this.blogs.stream()
-      .filter(b -> Objects.equals(b.getId(), id))
-      .findFirst()
-      .orElse(null);
+    String query = "SELECT blog_id, title, message, blogger, createdAt, link FROM blogs WHERE blog_id = ?";
+
+    return jdbc.queryForObject(query, this::mapBlog, id);
   }
 
   @Override
   public Blog create(Blog blog) {
-    blog.setCreatedAt(new Date());
-    blog.setBlogger(new Blogger());
-    blog.setId(this.blogs.stream().mapToLong(
-      b -> b.getId()).max().getAsLong() + 1);
-    this.blogs.add(blog);
+    String query = "INSERT INTO blogs (title, link, message, blogger)" +
+      "VALUES (?, ?, ?, ?)";
+    jdbc.update(query,
+      blog.getTitle(),
+      blog.getLink(),
+      blog.getMessage(),
+      blog.getBlogger()
+    );
 
     return blog;
   }
 
-  @Override
-  public Blog edit(Blog blog) {
-    for (int i = 0; i < this.blogs.size(); i++) {
-      if (Objects.equals(this.blogs.get(i).getId(), blog.getId())) {
-        this.blogs.set(i, blog);
-      }
-    }
-
-    return blog;
+  private Blog mapBlog(ResultSet resultSet, int row) throws SQLException {
+    return new Blog(
+      resultSet.getLong("blog_id"),
+      resultSet.getString("title"),
+      resultSet.getString("message"),
+      resultSet.getString("blogger"),
+      resultSet.getTimestamp("createdAt"),
+      resultSet.getString("link")
+    );
   }
 
-  @Override
-  public void deleteByTitle(String title) {
-    for (int i = 0; i < this.blogs.size(); i++) {
-      if (Objects.equals(this.blogs.get(i).getLink(), title)) {
-        this.blogs.remove(i);
-      }
-    }
-  }
-
-  @Override
-  public void deleteById(Long id) {
-    for (int i = 0; i < this.blogs.size(); i++) {
-      if (Objects.equals(this.blogs.get(i).getId(), id)) {
-        this.blogs.remove(i);
-      }
-    }
-  }
 }

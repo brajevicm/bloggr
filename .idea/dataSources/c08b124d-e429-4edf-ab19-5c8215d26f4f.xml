@@ -11,68 +11,163 @@
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="phpmyadmin"/>
     <schema id="7" parent="1" name="test"/>
-    <table id="8" parent="2" name="user_roles"/>
-    <table id="9" parent="2" name="users"/>
-    <column id="10" parent="8" name="user_role_id">
+    <table id="8" parent="2" name="blogger_roles"/>
+    <table id="9" parent="2" name="bloggers"/>
+    <table id="10" parent="2" name="blogs"/>
+    <column id="11" parent="8" name="blogger_role_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="11" parent="8" name="username">
+    <column id="12" parent="8" name="username">
       <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="12" parent="8" name="role">
+    <column id="13" parent="8" name="role">
       <Position>3</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="13" parent="8" name="fk_username_idx">
+    <index id="14" parent="8" name="fk_username_idx">
       <ColNames>username</ColNames>
     </index>
-    <index id="14" parent="8" name="uni_username_role">
+    <index id="15" parent="8" name="uni_username_role">
       <ColNames>role
 username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="15" parent="8" name="PRIMARY">
+    <key id="16" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>user_role_id</ColNames>
+      <ColNames>blogger_role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="16" parent="8" name="uni_username_role">
+    <key id="17" parent="8" name="uni_username_role">
       <ColNames>role
 username</ColNames>
       <UnderlyingIndexName>uni_username_role</UnderlyingIndexName>
     </key>
-    <foreign-key id="17" parent="8" name="fk_username">
+    <foreign-key id="18" parent="8" name="fk_username">
       <ColNames>username</ColNames>
       <RefSchemaName>bloggr</RefSchemaName>
-      <RefTableName>users</RefTableName>
+      <RefTableName>bloggers</RefTableName>
       <RefColNames>username</RefColNames>
     </foreign-key>
-    <column id="18" parent="9" name="username">
+    <column id="19" parent="9" name="blogger_id">
       <Position>1</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="19" parent="9" name="password">
+    <column id="20" parent="9" name="username">
       <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="9" name="enabled">
+    <column id="21" parent="9" name="password">
       <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="9" name="firstName">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="lastName">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="9" name="createdAt">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="25" parent="9" name="enabled">
+      <Position>7</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <key id="21" parent="9" name="PRIMARY">
+    <index id="26" parent="9" name="blogger_id">
+      <ColNames>blogger_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="27" parent="9" name="username">
+      <ColNames>username
+blogger_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
     </key>
+    <key id="29" parent="9" name="blogger_id">
+      <ColNames>blogger_id</ColNames>
+      <UnderlyingIndexName>blogger_id</UnderlyingIndexName>
+    </key>
+    <key id="30" parent="9" name="username">
+      <ColNames>username
+blogger_id</ColNames>
+      <UnderlyingIndexName>username</UnderlyingIndexName>
+    </key>
+    <column id="31" parent="10" name="blog_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="10" name="title">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="10" name="link">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="10" name="message">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="10" name="blogger">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="createdAt">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="37" parent="10" name="fk_blogger">
+      <ColNames>blogger</ColNames>
+    </index>
+    <index id="38" parent="10" name="uni_blog_id">
+      <ColNames>blog_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>blog_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="40" parent="10" name="uni_blog_id">
+      <ColNames>blog_id</ColNames>
+      <UnderlyingIndexName>uni_blog_id</UnderlyingIndexName>
+    </key>
+    <foreign-key id="41" parent="10" name="fk_blogger">
+      <ColNames>blogger</ColNames>
+      <RefSchemaName>bloggr</RefSchemaName>
+      <RefTableName>bloggers</RefTableName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

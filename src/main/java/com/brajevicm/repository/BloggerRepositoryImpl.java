@@ -5,9 +5,8 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Author:  Milos Brajevic
@@ -26,11 +25,20 @@ public class BloggerRepositoryImpl implements BloggerRepository {
 
   @Override
   public Blogger create(Blogger blogger) {
-    jdbc.update(
-      "INSERT INTO users (username, password)" +
-        " VALUES (?, ?)",
+    String query = "INSERT INTO bloggers (username, password, firstName, lastName)" +
+      " VALUES (?, ?, ?, ?)";
+    String queryForRole = "INSERT INTO blogger_roles (username, role)" +
+      "VALUES (?, ?)";
+    jdbc.update(query,
       blogger.getUsername(),
-      blogger.getPassword()
+      blogger.getPassword(),
+      blogger.getFirstName(),
+      blogger.getLastName()
+    );
+
+    jdbc.update(queryForRole,
+      blogger.getUsername(),
+      "ROLE_USER"
     );
 
     return blogger;
@@ -38,11 +46,18 @@ public class BloggerRepositoryImpl implements BloggerRepository {
 
   @Override
   public Blogger findByUsername(String username) {
-    return null;
+    String query = "SELECT username, firstName, lastName FROM bloggers WHERE username = ?";
+    return jdbc.queryForObject(query, this::mapBlogger, username);
   }
 
-  @Override
-  public Blogger findBloggerByLogin(String username, String passsword) {
-    return null;
+  private Blogger mapBlogger(ResultSet resultSet, int row) throws SQLException {
+    return new Blogger(
+      resultSet.getLong("blogger_id"),
+      resultSet.getString("username"),
+      null,
+      resultSet.getString("firstName"),
+      resultSet.getString("lastName"),
+      resultSet.getTimestamp("createdAt")
+    );
   }
 }

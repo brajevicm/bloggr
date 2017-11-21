@@ -5,6 +5,8 @@ import com.brajevicm.entity.form.BlogForm;
 import com.brajevicm.repository.BlogRepository;
 import com.brajevicm.repository.BlogRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -18,7 +20,8 @@ import java.util.List;
  */
 @Service
 public class BlogServiceImpl implements BlogService {
-  private BlogRepository blogRepository = new BlogRepositoryImpl();
+  @Autowired
+  private BlogRepository blogRepository;
 
   @Override
   public List<Blog> findBlogs() {
@@ -38,27 +41,15 @@ public class BlogServiceImpl implements BlogService {
   @Override
   public Blog create(BlogForm blogForm) {
     String titleForUrl = blogForm.getTitle().replace(' ', '-').toLowerCase();
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    String bloggerUsername = auth.getName();
 
     Blog blog = new Blog();
     blog.setTitle(blogForm.getTitle());
     blog.setMessage(blogForm.getMessage());
     blog.setLink(titleForUrl);
+    blog.setBlogger(bloggerUsername);
 
     return blogRepository.create(blog);
-  }
-
-  @Override
-  public Blog edit(Blog blog) {
-    return blogRepository.edit(blog);
-  }
-
-  @Override
-  public void deleteByTitle(String title) {
-    blogRepository.deleteByTitle(title);
-  }
-
-  @Override
-  public void deleteById(Long id) {
-    blogRepository.deleteById(id);
   }
 }

@@ -3,6 +3,7 @@ package com.brajevicm.entity;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,27 +19,24 @@ public class Blogger {
   private String password;
   private String firstName;
   private String lastName;
-  private String email;
-  private String createdAt;
+  private Date createdAt;
 
   public Blogger() {
   }
 
-  public Blogger(String username, String password, String firstName, String lastName, String email) {
+  public Blogger(String username, String password, String firstName, String lastName) {
     this.username = username;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.email = email;
   }
 
-  public Blogger(Long id, String username, String password, String firstName, String lastName, String email, String createdAt) {
+  public Blogger(Long id, String username, String password, String firstName, String lastName, Date createdAt) {
     this.id = id;
     this.username = username;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.email = email;
     this.createdAt = createdAt;
   }
 
@@ -82,19 +80,11 @@ public class Blogger {
     this.lastName = lastName;
   }
 
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getCreatedAt() {
+  public Date getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -112,7 +102,6 @@ public class Blogger {
       .append(password, blogger.password)
       .append(firstName, blogger.firstName)
       .append(lastName, blogger.lastName)
-      .append(email, blogger.email)
       .append(createdAt, blogger.createdAt)
       .isEquals();
   }
@@ -125,7 +114,6 @@ public class Blogger {
       .append(password)
       .append(firstName)
       .append(lastName)
-      .append(email)
       .append(createdAt)
       .toHashCode();
   }
@@ -138,7 +126,6 @@ public class Blogger {
       ", password='" + password + '\'' +
       ", firstName='" + firstName + '\'' +
       ", lastName='" + lastName + '\'' +
-      ", email='" + email + '\'' +
       ", createdAt='" + createdAt + '\'' +
       '}';
   }

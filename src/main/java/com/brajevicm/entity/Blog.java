@@ -17,7 +17,7 @@ public class Blog {
   private Long id;
   private String title;
   private String message;
-  private Blogger blogger;
+  private String blogger;
   private Date createdAt;
   private String link;
 
@@ -29,7 +29,7 @@ public class Blog {
     this.message = message;
   }
 
-  public Blog(Long id, String title, String message, Blogger blogger, Date createdAt) {
+  public Blog(Long id, String title, String message, String blogger, Date createdAt) {
     this.id = id;
     this.title = title;
     this.message = message;
@@ -37,7 +37,7 @@ public class Blog {
     this.createdAt = createdAt;
   }
 
-  public Blog(Long id, String title, String message, Blogger blogger, Date createdAt, String link) {
+  public Blog(Long id, String title, String message, String blogger, Date createdAt, String link) {
     this.id = id;
     this.title = title;
     this.message = message;
@@ -70,11 +70,11 @@ public class Blog {
     this.message = message;
   }
 
-  public Blogger getBlogger() {
+  public String getBlogger() {
     return blogger;
   }
 
-  public void setBlogger(Blogger blogger) {
+  public void setBlogger(String blogger) {
     this.blogger = blogger;
   }
 
