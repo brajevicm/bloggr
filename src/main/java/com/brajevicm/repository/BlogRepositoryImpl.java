@@ -31,6 +31,12 @@ public class BlogRepositoryImpl implements BlogRepository {
     return sessionFactory.getCurrentSession();
   }
 
+  //  @TODO
+  @Override
+  public void deleteByTitle(String title) {
+
+  }
+
   @SuppressWarnings("unchecked")
   @Override
   @Transactional
@@ -44,6 +50,12 @@ public class BlogRepositoryImpl implements BlogRepository {
     return (Blog) getSession().createCriteria(Blog.class)
       .add(Restrictions.eq("title", title))
       .uniqueResult();
+  }
+
+  //  @TODO
+  @Override
+  public Blog update(Blog blog) {
+    return null;
   }
 
   @Override

@@ -12,11 +12,15 @@ import java.util.List;
  * Date:    14-Nov-17
  */
 public interface BlogRepository {
+  void deleteByTitle(String title);
+
   List<Blog> findBlogs();
 
-  Blog findByTitle(String title);
+  Blog create(Blog blog);
 
   Blog findById(Long id);
 
-  Blog create(Blog blog);
+  Blog findByTitle(String title);
+
+  Blog update(Blog blog);
 }

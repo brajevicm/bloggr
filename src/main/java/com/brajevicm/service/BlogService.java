@@ -19,11 +19,16 @@ import java.util.Objects;
  * Date:    14-Nov-17
  */
 public interface BlogService {
+  void deleteByTitle(String title);
+
   List<Blog> findBlogs();
 
-  Blog findByTitle(String title);
+  Blog create(BlogForm blogForm);
 
   Blog findById(Long id);
 
-  Blog create(BlogForm blogForm);
+  Blog findByTitle(String title);
+
+  Blog update(Blog blog);
+
 }

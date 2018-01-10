@@ -28,6 +28,12 @@ public class BlogServiceImpl implements BlogService {
   @Autowired
   private BloggerRepository bloggerRepository;
 
+  //  @TODO
+  @Override
+  public void deleteByTitle(String title) {
+
+  }
+
   @Override
   public List<Blog> findBlogs() {
     return blogRepository.findBlogs();
@@ -36,6 +42,12 @@ public class BlogServiceImpl implements BlogService {
   @Override
   public Blog findByTitle(String title) {
     return blogRepository.findByTitle(title);
+  }
+
+  //  @TODO
+  @Override
+  public Blog update(Blog blog) {
+    return null;
   }
 
   @Override
