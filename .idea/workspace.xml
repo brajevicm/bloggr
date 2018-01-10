@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1019924-b6e0-4f43-91e7-ac768b7945ea" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/controller/rest/BlogRestController.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/bloggr_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/bloggr_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bloggr.iml" afterPath="$PROJECT_DIR$/bloggr.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BlogRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BlogRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BlogRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/repository/BlogRepositoryImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BlogService.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BlogService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BlogServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/brajevicm/service/BlogServiceImpl.java" />
-    </list>
+    <list default="true" id="c1019924-b6e0-4f43-91e7-ac768b7945ea" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/controller/rest/BlogRestController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1376#1377#0" expanded="true" />
@@ -747,7 +734,7 @@
       <workItem from="1515536200259" duration="11475000" />
       <workItem from="1515574840222" duration="7040000" />
       <workItem from="1515594550756" duration="6364000" />
-      <workItem from="1515606541320" duration="563000" />
+      <workItem from="1515606541320" duration="695000" />
     </task>
     <servers />
   </component>
@@ -784,7 +771,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182212000" />
+    <option name="totallyTimeSpent" value="182344000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,7 +784,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.50265753" order="9" side_tool="true" content_ui="tabs" />
@@ -821,7 +807,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.91206896" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931036" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18683812" sideWeight="0.49535963" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18154034" sideWeight="0.5046404" order="3" side_tool="true" content_ui="tabs" />
@@ -1281,7 +1267,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brajevicm/controller/rest/BlogRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1376#1377#0" expanded="true" />
