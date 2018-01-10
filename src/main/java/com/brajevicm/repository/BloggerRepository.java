@@ -1,9 +1,7 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blogger;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import com.brajevicm.entity.Role;
 
 /**
  * Author:  Milos Brajevic
@@ -12,7 +10,7 @@ import java.util.List;
  * Date:    15-Nov-17
  */
 public interface BloggerRepository {
-  Blogger create(Blogger blogger);
+  Blogger create(Blogger blogger, Role role);
 
   Blogger findByUsername(String username);
 }

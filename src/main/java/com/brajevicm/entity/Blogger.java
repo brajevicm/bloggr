@@ -39,6 +39,9 @@ public class Blogger {
   @Column(name = "createdAt")
   private Date createdAt;
 
+  @Column(name = "enabled")
+  private int enabled;
+
   @OneToMany(mappedBy = "blogger")
   private List<Blog> blogs;
 
@@ -50,17 +53,6 @@ public class Blogger {
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
-  }
-
-  public Blogger(Long id, String username, String password,
-                 String firstName, String lastName, Date createdAt, List<Blog> blogs) {
-    this.id = id;
-    this.username = username;
-    this.password = password;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.createdAt = createdAt;
-    this.blogs = blogs;
   }
 
   public Long getId() {
@@ -111,6 +103,18 @@ public class Blogger {
     this.createdAt = createdAt;
   }
 
+  public int getEnabled() {
+    return enabled;
+  }
+
+  public void setEnabled() {
+    enabled = 1;
+  }
+
+  public void setDisabled() {
+    enabled = 0;
+  }
+
   public List<Blog> getBlogs() {
     return blogs;
   }
@@ -128,12 +132,14 @@ public class Blogger {
     Blogger blogger = (Blogger) o;
 
     return new EqualsBuilder()
+      .append(enabled, blogger.enabled)
       .append(id, blogger.id)
       .append(username, blogger.username)
       .append(password, blogger.password)
       .append(firstName, blogger.firstName)
       .append(lastName, blogger.lastName)
       .append(createdAt, blogger.createdAt)
+      .append(blogs, blogger.blogs)
       .isEquals();
   }
 
@@ -146,6 +152,8 @@ public class Blogger {
       .append(firstName)
       .append(lastName)
       .append(createdAt)
+      .append(enabled)
+      .append(blogs)
       .toHashCode();
   }
 
@@ -157,7 +165,9 @@ public class Blogger {
       ", password='" + password + '\'' +
       ", firstName='" + firstName + '\'' +
       ", lastName='" + lastName + '\'' +
-      ", createdAt='" + createdAt + '\'' +
+      ", createdAt=" + createdAt +
+      ", enabled=" + enabled +
+      ", blogs=" + blogs +
       '}';
   }
 }

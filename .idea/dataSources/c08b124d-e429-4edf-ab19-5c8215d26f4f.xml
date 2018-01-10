@@ -1062,8 +1062,7 @@ username</ColNames>
       <Unique>1</Unique>
     </index>
     <index id="261" parent="243" name="username">
-      <ColNames>username
-blogger_id</ColNames>
+      <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="262" parent="243" name="PRIMARY">
@@ -1076,8 +1075,7 @@ blogger_id</ColNames>
       <UnderlyingIndexName>blogger_id</UnderlyingIndexName>
     </key>
     <key id="264" parent="243" name="username">
-      <ColNames>username
-blogger_id</ColNames>
+      <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
     <column id="265" parent="244" name="blog_id">

@@ -98,10 +98,6 @@ public class Blog {
     return createdAt;
   }
 
-  public void setCreatedAt(Date createdAt) {
-    this.createdAt = createdAt;
-  }
-
   public String getLink() {
     return link;
   }

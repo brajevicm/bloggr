@@ -3,14 +3,11 @@ package com.brajevicm.repository;
 import com.brajevicm.entity.Blog;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -30,7 +27,7 @@ public class BlogRepositoryImpl implements BlogRepository {
     this.sessionFactory = sessionFactory;
   }
 
-  public Session getSession() {
+  private Session getSession() {
     return sessionFactory.getCurrentSession();
   }
 
@@ -38,22 +35,26 @@ public class BlogRepositoryImpl implements BlogRepository {
   @Override
   @Transactional
   public List<Blog> findBlogs() {
-    return (List<Blog>) getSession().createQuery("from Blog").list();
+    return (List<Blog>) getSession().createCriteria(Blog.class).list();
   }
 
   @Override
   @Transactional
   public Blog findByTitle(String title) {
-    return null;
+    return (Blog) getSession().createCriteria(Blog.class)
+      .add(Restrictions.eq("title", title))
+      .uniqueResult();
   }
 
   @Override
   public Blog findById(Long id) {
-    return null;
+    return (Blog) getSession().createCriteria(Blog.class)
+      .add(Restrictions.eq("id", id))
+      .uniqueResult();
   }
 
   @Override
   public Blog create(Blog blog) {
-    return null;
+    return (Blog) getSession().merge(blog);
   }
 }

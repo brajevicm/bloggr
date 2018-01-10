@@ -35,7 +35,7 @@ public class DataSourceConfig {
   public LocalSessionFactoryBean sessionFactoryBean() {
     LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
     sessionFactoryBean.setDataSource(dataSource());
-    sessionFactoryBean.setPackagesToScan(new String[]{"com.brajevicm.entity"});
+    sessionFactoryBean.setPackagesToScan("com.brajevicm.entity");
     sessionFactoryBean.setHibernateProperties(hibernateProperties());
 
     return sessionFactoryBean;
@@ -66,23 +66,20 @@ public class DataSourceConfig {
     return new PersistenceExceptionTranslationPostProcessor();
   }
 
-  Properties additionalProperties() {
+  private Properties hibernateProperties() {
     Properties properties = new Properties();
     properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
     properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
     return properties;
-  }
-
-  private Properties hibernateProperties() {
-    return new Properties() {
-      {
-        setProperty("hibernate.hbm2ddl.auto",
-          env.getProperty("hibernate.hbm2ddl.auto"));
-        setProperty("hibernate.dialect",
-          env.getProperty("hibernate.dialect"));
-        setProperty("hibernate.globally_quoted_identifiers",
-          "true");
-      }
-    };
+//    return new Properties() {
+//      {
+//        setProperty("hibernate.hbm2ddl.auto",
+//          env.getProperty("hibernate.hbm2ddl.auto"));
+//        setProperty("hibernate.dialect",
+//          env.getProperty("hibernate.dialect"));
+//        setProperty("hibernate.globally_quoted_identifiers",
+//          "true");
+//      }
+//    };
   }
 }

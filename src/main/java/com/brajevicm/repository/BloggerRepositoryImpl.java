@@ -1,12 +1,13 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blogger;
-import org.springframework.jdbc.core.JdbcOperations;
+import com.brajevicm.entity.Role;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import javax.inject.Inject;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Author:  Milos Brajevic
@@ -17,14 +18,34 @@ import java.sql.SQLException;
 @Repository("bloggerRepository")
 public class BloggerRepositoryImpl implements BloggerRepository {
 
+  @Autowired
+  SessionFactory sessionFactory;
+
+  @Autowired
+  public void setSessionFactory(SessionFactory sessionFactory) {
+    this.sessionFactory = sessionFactory;
+  }
+
+  private Session getSession() {
+    return sessionFactory.getCurrentSession();
+  }
+
+  @SuppressWarnings("unchecked")
   @Override
-  public Blogger create(Blogger blogger) {
-    return null;
+  @Transactional
+  public Blogger create(Blogger blogger, Role role) {
+    blogger = (Blogger) getSession().merge(blogger);
+    getSession().merge(role);
+
+    return blogger;
   }
 
   @Override
+  @Transactional
   public Blogger findByUsername(String username) {
-    return null;
+    return (Blogger) getSession().createCriteria(Blogger.class)
+      .add(Restrictions.eq("username", username))
+      .uniqueResult();
   }
 
 }

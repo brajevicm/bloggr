@@ -1,6 +1,7 @@
 package com.brajevicm.service;
 
 import com.brajevicm.entity.Blog;
+import com.brajevicm.entity.Blogger;
 import com.brajevicm.entity.form.BlogForm;
 import com.brajevicm.repository.BlogRepository;
 import com.brajevicm.repository.BlogRepositoryImpl;
@@ -47,12 +48,13 @@ public class BlogServiceImpl implements BlogService {
     String titleForUrl = blogForm.getTitle().replace(' ', '-').toLowerCase();
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     String bloggerUsername = auth.getName();
+    Blogger blogger = bloggerRepository.findByUsername(bloggerUsername);
 
     Blog blog = new Blog();
     blog.setTitle(blogForm.getTitle());
     blog.setMessage(blogForm.getMessage());
     blog.setLink(titleForUrl);
-    blog.setBlogger(bloggerRepository.findByUsername(bloggerUsername));
+    blog.setBlogger(blogger);
 
     return blogRepository.create(blog);
   }

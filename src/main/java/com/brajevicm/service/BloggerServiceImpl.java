@@ -1,9 +1,9 @@
 package com.brajevicm.service;
 
 import com.brajevicm.entity.Blogger;
+import com.brajevicm.entity.Role;
 import com.brajevicm.entity.form.BloggerForm;
 import com.brajevicm.repository.BloggerRepository;
-import com.brajevicm.repository.BloggerRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +25,11 @@ public class BloggerServiceImpl implements BloggerService {
     blogger.setLastName(bloggerForm.getLastName());
     blogger.setUsername(bloggerForm.getUsername());
     blogger.setPassword(bloggerForm.getPassword());
+    blogger.setEnabled();
 
-    bloggerRepository.create(blogger);
+    Role role = new Role(blogger.getUsername(), "ROLE_USER");
+
+    bloggerRepository.create(blogger, role);
   }
 
   @Override
