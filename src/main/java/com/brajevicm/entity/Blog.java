@@ -27,7 +27,7 @@ public class Blog {
   @Column(name = "message")
   private String message;
 
-  @ManyToOne
+  @OneToOne
   @JoinColumn(name = "blogger")
   private Blogger blogger;
 

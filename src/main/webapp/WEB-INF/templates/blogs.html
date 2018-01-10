@@ -15,7 +15,7 @@
         <h1><a th:href="@{'/blog/' + ${blog.link}}"><span th:text="${blog.title}"></span></a></h1>
       </div>
       <div>
-        <h3><span th:text="${blog.blogger}">Blogger</span></h3>
+        <h3><span th:text="${blog.blogger.getUsername()}">Blogger</span></h3>
         <h4><span th:text="${blog.createdAt}"></span></h4>
       </div>
     </div>

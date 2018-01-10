@@ -47,6 +47,7 @@ public class BlogRepositoryImpl implements BlogRepository {
   }
 
   @Override
+  @Transactional
   public Blog findById(Long id) {
     return (Blog) getSession().createCriteria(Blog.class)
       .add(Restrictions.eq("id", id))
@@ -54,6 +55,7 @@ public class BlogRepositoryImpl implements BlogRepository {
   }
 
   @Override
+  @Transactional
   public Blog create(Blog blog) {
     return (Blog) getSession().merge(blog);
   }

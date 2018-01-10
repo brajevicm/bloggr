@@ -5,9 +5,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Author:  Milos Brajevic
@@ -20,10 +18,11 @@ import java.util.Set;
 public class Blogger {
 
   @Column(name = "blogger_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @Id
-  @Column(name = "username", columnDefinition = "VARCHAR(30)")
+  @Column(name = "username")
   private String username;
 
   @Column(name = "password")
@@ -40,9 +39,6 @@ public class Blogger {
 
   @Column(name = "enabled")
   private int enabled;
-
-  @OneToMany(mappedBy = "blogger")
-  private List<Blog> blogs;
 
   public Blogger() {
   }
@@ -114,14 +110,6 @@ public class Blogger {
     enabled = 0;
   }
 
-  public List<Blog> getBlogs() {
-    return blogs;
-  }
-
-  public void setBlogs(List<Blog> blogs) {
-    this.blogs = blogs;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -138,7 +126,6 @@ public class Blogger {
       .append(firstName, blogger.firstName)
       .append(lastName, blogger.lastName)
       .append(createdAt, blogger.createdAt)
-      .append(blogs, blogger.blogs)
       .isEquals();
   }
 
@@ -152,7 +139,6 @@ public class Blogger {
       .append(lastName)
       .append(createdAt)
       .append(enabled)
-      .append(blogs)
       .toHashCode();
   }
 
@@ -166,7 +152,6 @@ public class Blogger {
       ", lastName='" + lastName + '\'' +
       ", createdAt=" + createdAt +
       ", enabled=" + enabled +
-      ", blogs=" + blogs +
       '}';
   }
 }
