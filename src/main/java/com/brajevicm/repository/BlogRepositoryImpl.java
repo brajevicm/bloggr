@@ -32,13 +32,15 @@ public class BlogRepositoryImpl implements BlogRepository {
   }
 
   @Override
+  @Transactional
   public void delete(Blog blog) {
-
+    getSession().delete(blog);
   }
 
   @Override
+  @Transactional
   public void update(Blog blog) {
-
+    getSession().saveOrUpdate(blog);
   }
 
   @SuppressWarnings("unchecked")
