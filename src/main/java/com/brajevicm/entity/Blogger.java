@@ -3,8 +3,10 @@ package com.brajevicm.entity;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -13,13 +15,32 @@ import java.util.Set;
  * Github:  https://github.com/brajevicm
  * Date:    15-Nov-17
  */
+@Entity
+@Table(name = "bloggers")
 public class Blogger {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "blogger_id")
   private Long id;
+
+  @Column(name = "username")
   private String username;
+
+  @Column(name = "password")
   private String password;
+
+  @Column(name = "firstName")
   private String firstName;
+
+  @Column(name = "lastName")
   private String lastName;
+
+  @Column(name = "createdAt")
   private Date createdAt;
+
+  @OneToMany(mappedBy = "blogger")
+  private List<Blog> blogs;
 
   public Blogger() {
   }
@@ -31,13 +52,15 @@ public class Blogger {
     this.lastName = lastName;
   }
 
-  public Blogger(Long id, String username, String password, String firstName, String lastName, Date createdAt) {
+  public Blogger(Long id, String username, String password,
+                 String firstName, String lastName, Date createdAt, List<Blog> blogs) {
     this.id = id;
     this.username = username;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
     this.createdAt = createdAt;
+    this.blogs = blogs;
   }
 
   public Long getId() {
@@ -86,6 +109,14 @@ public class Blogger {
 
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
+  }
+
+  public List<Blog> getBlogs() {
+    return blogs;
+  }
+
+  public void setBlogs(List<Blog> blogs) {
+    this.blogs = blogs;
   }
 
   @Override

@@ -4,6 +4,7 @@ import com.brajevicm.entity.Blog;
 import com.brajevicm.entity.form.BlogForm;
 import com.brajevicm.repository.BlogRepository;
 import com.brajevicm.repository.BlogRepositoryImpl;
+import com.brajevicm.repository.BloggerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,6 +23,9 @@ import java.util.List;
 public class BlogServiceImpl implements BlogService {
   @Autowired
   private BlogRepository blogRepository;
+
+  @Autowired
+  private BloggerRepository bloggerRepository;
 
   @Override
   public List<Blog> findBlogs() {
@@ -48,7 +52,7 @@ public class BlogServiceImpl implements BlogService {
     blog.setTitle(blogForm.getTitle());
     blog.setMessage(blogForm.getMessage());
     blog.setLink(titleForUrl);
-    blog.setBlogger(bloggerUsername);
+    blog.setBlogger(bloggerRepository.findByUsername(bloggerUsername));
 
     return blogRepository.create(blog);
   }

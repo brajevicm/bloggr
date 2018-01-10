@@ -3,8 +3,7 @@ package com.brajevicm.entity;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -13,12 +12,29 @@ import java.util.Date;
  * Github:  https://github.com/brajevicm
  * Date:    14-Nov-17
  */
+@Entity
+@Table(name = "blogs")
 public class Blog {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "blog_id")
   private Long id;
+
+  @Column(name = "title")
   private String title;
+
+  @Column(name = "message")
   private String message;
-  private String blogger;
+
+  @ManyToOne
+  @JoinColumn(name = "blogger")
+  private Blogger blogger;
+
+  @Column(name = "createdAt")
   private Date createdAt;
+
+  @Column(name = "link")
   private String link;
 
   public Blog() {
@@ -29,7 +45,7 @@ public class Blog {
     this.message = message;
   }
 
-  public Blog(Long id, String title, String message, String blogger, Date createdAt) {
+  public Blog(Long id, String title, String message, Blogger blogger, Date createdAt) {
     this.id = id;
     this.title = title;
     this.message = message;
@@ -37,7 +53,7 @@ public class Blog {
     this.createdAt = createdAt;
   }
 
-  public Blog(Long id, String title, String message, String blogger, Date createdAt, String link) {
+  public Blog(Long id, String title, String message, Blogger blogger, Date createdAt, String link) {
     this.id = id;
     this.title = title;
     this.message = message;
@@ -70,11 +86,11 @@ public class Blog {
     this.message = message;
   }
 
-  public String getBlogger() {
+  public Blogger getBlogger() {
     return blogger;
   }
 
-  public void setBlogger(String blogger) {
+  public void setBlogger(Blogger blogger) {
     this.blogger = blogger;
   }
 
@@ -130,7 +146,7 @@ public class Blog {
       "id=" + id +
       ", title='" + title + '\'' +
       ", message='" + message + '\'' +
-      ", blogger=" + blogger +
+      ", blogger=" + blogger.getUsername() +
       ", createdAt=" + createdAt +
       ", link='" + link + '\'' +
       '}';

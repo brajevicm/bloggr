@@ -1,10 +1,14 @@
 package com.brajevicm.repository;
 
 import com.brajevicm.entity.Blog;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -17,57 +21,39 @@ import java.util.List;
  */
 @Repository("blogRepository")
 public class BlogRepositoryImpl implements BlogRepository {
-  private JdbcOperations jdbc;
 
-  @Inject
-  public BlogRepositoryImpl(JdbcOperations jdbc) {
-    this.jdbc = jdbc;
+  @Autowired
+  private SessionFactory sessionFactory;
+
+  @Autowired
+  public void setSessionFactory(SessionFactory sessionFactory) {
+    this.sessionFactory = sessionFactory;
   }
 
+  public Session getSession() {
+    return sessionFactory.getCurrentSession();
+  }
+
+  @SuppressWarnings("unchecked")
   @Override
+  @Transactional
   public List<Blog> findBlogs() {
-    String query = "SELECT blog_id, title, message, blogger, createdAt, link FROM blogs";
-
-    return jdbc.query(query, this::mapBlog);
+    return (List<Blog>) getSession().createQuery("from Blog").list();
   }
 
   @Override
+  @Transactional
   public Blog findByTitle(String title) {
-    String query = "SELECT blog_id, title, message, blogger, createdAt, link FROM blogs WHERE link = ?";
-
-    return jdbc.queryForObject(query, this::mapBlog, title);
+    return null;
   }
 
   @Override
   public Blog findById(Long id) {
-    String query = "SELECT blog_id, title, message, blogger, createdAt, link FROM blogs WHERE blog_id = ?";
-
-    return jdbc.queryForObject(query, this::mapBlog, id);
+    return null;
   }
 
   @Override
   public Blog create(Blog blog) {
-    String query = "INSERT INTO blogs (title, link, message, blogger)" +
-      "VALUES (?, ?, ?, ?)";
-    jdbc.update(query,
-      blog.getTitle(),
-      blog.getLink(),
-      blog.getMessage(),
-      blog.getBlogger()
-    );
-
-    return blog;
+    return null;
   }
-
-  private Blog mapBlog(ResultSet resultSet, int row) throws SQLException {
-    return new Blog(
-      resultSet.getLong("blog_id"),
-      resultSet.getString("title"),
-      resultSet.getString("message"),
-      resultSet.getString("blogger"),
-      resultSet.getTimestamp("createdAt"),
-      resultSet.getString("link")
-    );
-  }
-
 }
