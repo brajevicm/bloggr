@@ -68,18 +68,8 @@ public class DataSourceConfig {
 
   private Properties hibernateProperties() {
     Properties properties = new Properties();
-    properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+    properties.setProperty("hibernate.hbm2ddl.auto", "update");
     properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
     return properties;
-//    return new Properties() {
-//      {
-//        setProperty("hibernate.hbm2ddl.auto",
-//          env.getProperty("hibernate.hbm2ddl.auto"));
-//        setProperty("hibernate.dialect",
-//          env.getProperty("hibernate.dialect"));
-//        setProperty("hibernate.globally_quoted_identifiers",
-//          "true");
-//      }
-//    };
   }
 }

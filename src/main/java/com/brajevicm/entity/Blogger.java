@@ -19,12 +19,11 @@ import java.util.Set;
 @Table(name = "bloggers")
 public class Blogger {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "blogger_id")
   private Long id;
 
-  @Column(name = "username")
+  @Id
+  @Column(name = "username", columnDefinition = "VARCHAR(30)")
   private String username;
 
   @Column(name = "password")
