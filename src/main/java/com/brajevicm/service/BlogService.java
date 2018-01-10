@@ -19,7 +19,9 @@ import java.util.Objects;
  * Date:    14-Nov-17
  */
 public interface BlogService {
-  void deleteByTitle(String title);
+  void delete(Blog blog);
+
+  void update(Blog blog);
 
   List<Blog> findBlogs();
 
@@ -28,7 +30,4 @@ public interface BlogService {
   Blog findById(Long id);
 
   Blog findByTitle(String title);
-
-  Blog update(Blog blog);
-
 }

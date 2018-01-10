@@ -31,9 +31,13 @@ public class BlogRepositoryImpl implements BlogRepository {
     return sessionFactory.getCurrentSession();
   }
 
-  //  @TODO
   @Override
-  public void deleteByTitle(String title) {
+  public void delete(Blog blog) {
+
+  }
+
+  @Override
+  public void update(Blog blog) {
 
   }
 
@@ -50,12 +54,6 @@ public class BlogRepositoryImpl implements BlogRepository {
     return (Blog) getSession().createCriteria(Blog.class)
       .add(Restrictions.eq("title", title))
       .uniqueResult();
-  }
-
-  //  @TODO
-  @Override
-  public Blog update(Blog blog) {
-    return null;
   }
 
   @Override

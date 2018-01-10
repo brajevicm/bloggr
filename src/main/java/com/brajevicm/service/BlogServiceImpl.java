@@ -28,10 +28,16 @@ public class BlogServiceImpl implements BlogService {
   @Autowired
   private BloggerRepository bloggerRepository;
 
-  //  @TODO
   @Override
-  public void deleteByTitle(String title) {
+  public void delete(Blog blog) {
+    blogRepository.delete(blog);
+  }
 
+  @Override
+  public void update(Blog blog) {
+    String titleForUrl = blog.getTitle().replace(' ', '-').toLowerCase();
+    blog.setLink(titleForUrl);
+    blogRepository.update(blog);
   }
 
   @Override
@@ -42,12 +48,6 @@ public class BlogServiceImpl implements BlogService {
   @Override
   public Blog findByTitle(String title) {
     return blogRepository.findByTitle(title);
-  }
-
-  //  @TODO
-  @Override
-  public Blog update(Blog blog) {
-    return null;
   }
 
   @Override
@@ -61,6 +61,11 @@ public class BlogServiceImpl implements BlogService {
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     String bloggerUsername = auth.getName();
     Blogger blogger = bloggerRepository.findByUsername(bloggerUsername);
+
+//     Fail safe until tokens are implemented
+    if (blogger == null) {
+      blogger = bloggerRepository.findByUsername("admin");
+    }
 
     Blog blog = new Blog();
     blog.setTitle(blogForm.getTitle());
