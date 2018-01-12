@@ -13,3 +13,40 @@ Aim is to have the following functionalities:
   <li>Logout</li>
   <li>RESTful API</li>
 </ul>
+
+API endpoints:
+
+GET/POST <i>/api/blogs</i>
+
+<code>
+
+    {
+        "title": "Title",
+        "message": "Message"
+    }
+    
+</code>
+
+GET/PUT/DELETE <i>/api/blog/{blogTitle}</i>
+
+
+<code>
+
+    {
+        "id": 3,
+        "title": "Title",
+        "message": "Message",
+        "blogger": {
+            "id": 1,
+            "username": "milos",
+            "password": "milos",
+            "firstName": "Milos",
+            "lastName": "Brajevic",
+            "createdAt": 1515581395000,
+            "enabled": 1
+        },
+        "createdAt": 1515615105000,
+        "link": "title"
+    }
+
+</code>
